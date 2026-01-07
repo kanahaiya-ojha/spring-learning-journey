@@ -8,5 +8,17 @@ public class IoCPracticeXml {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/kanahaiya/practice/ioc/applicationContext.xml");
 		MandiService mService = (MandiService) applicationContext.getBean("mandiBean");
 		System.out.println(mService);
+		
+         /* *****Setter Injection*******  */
+		MandiPriceService mandiPriceService= (MandiPriceService) applicationContext.getBean("mandiPriceService");
+		mandiPriceService.processPrices();
+		
+		/* *****Cunstructor injection******* */
+		
+		MandiNotifier mandiNotifier = (MandiNotifier) applicationContext.getBean("mandiNotifiere");
+		mandiNotifier.alertFarmer();
+		
+	    
+		
 	}
 }
