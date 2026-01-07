@@ -7,5 +7,14 @@
     <bean id="mandiBean" class="com.kanahaiya.practice.ioc.MandiService">
         <property name="location" value="Indore Mandi" />
     </bean>
+    
+     <bean id="myDbConnector" class="com.kanahaiya.practice.ioc.DatabaseConnector"/>
+     
+     <bean id="mandiPriceService" class="com.kanahaiya.practice.ioc.MandiPriceService">
+       <property name="DbConnector" ref="myDbConnector"></property>
+     </bean>
+     
+       
+    
 
 </beans>

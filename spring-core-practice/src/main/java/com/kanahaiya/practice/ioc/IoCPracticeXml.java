@@ -8,5 +8,10 @@ public class IoCPracticeXml {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/kanahaiya/practice/ioc/applicationContext.xml");
 		MandiService mService = (MandiService) applicationContext.getBean("mandiBean");
 		System.out.println(mService);
+		
+         /* *************  */
+		MandiPriceService mandiPriceService= (MandiPriceService) applicationContext.getBean("mandiPriceService");
+		mandiPriceService.processPrices();
+		
 	}
 }
