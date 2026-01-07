@@ -7,13 +7,12 @@
 		<property name="location" value="Indore Mandi" />
 	</bean>
 
-	<bean id="myDbConnector"
+	<bean id="dbConnector"
 		class="com.kanahaiya.practice.ioc.DatabaseConnector" />
 
 	<bean id="mandiPriceService"
-		class="com.kanahaiya.practice.ioc.MandiPriceService">
-		<property name="DbConnector" ref="myDbConnector"></property>
-	</bean>
+		class="com.kanahaiya.practice.ioc.MandiPriceService" autowire="byName" />
+
 
 	<bean id="msgService" class="com.kanahaiya.practice.ioc.MessageService" />
 
