@@ -9,9 +9,16 @@ public class IoCPracticeXml {
 		MandiService mService = (MandiService) applicationContext.getBean("mandiBean");
 		System.out.println(mService);
 		
-         /* *************  */
+         /* *****Setter Injection*******  */
 		MandiPriceService mandiPriceService= (MandiPriceService) applicationContext.getBean("mandiPriceService");
 		mandiPriceService.processPrices();
+		
+		/* *****Cunstructor injection******* */
+		
+		MandiNotifier mandiNotifier = (MandiNotifier) applicationContext.getBean("mandiNotifiere");
+		mandiNotifier.alertFarmer();
+		
+	    
 		
 	}
 }
