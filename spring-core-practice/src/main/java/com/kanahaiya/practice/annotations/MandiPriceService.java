@@ -1,10 +1,14 @@
 package com.kanahaiya.practice.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MandiPriceService {
 	@Autowired
 	private DatabaseConnector dbConnector;
+	@Autowired
+	@Qualifier("ujjainMandi") // This tells Spring: "Use the Ujjain implementation!"
+	private MandiData mandiData;
 
 	public DatabaseConnector getDbConnector() {
 		return dbConnector;
@@ -19,5 +23,9 @@ public class MandiPriceService {
 		System.out.print("using autowire annotation ");
 		System.out.println("processing: "+ data +" -> Price: Rs2400/-");
 	}
+	
+	public void process() {
+        System.out.println(mandiData.getInfo());
+    }
 
 }
