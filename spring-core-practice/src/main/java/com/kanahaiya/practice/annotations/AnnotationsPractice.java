@@ -9,5 +9,9 @@ public class AnnotationsPractice {
 	   ApplicationContext context=new ClassPathXmlApplicationContext("com/kanahaiya/practice/annotations/applicationContext.xml");
 	   MandiPriceService mandiPriceService=(MandiPriceService) context.getBean("mandiPriceService");
 	   mandiPriceService.processPrices();
+	   
+	   mandiPriceService.process();
+	   
+	   
 }
 }
