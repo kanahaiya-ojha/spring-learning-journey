@@ -14,9 +14,11 @@ public class MandiController {
         this.priceService = priceService;
     }
 
-    @GetMapping("/prices") // Visit http://localhost:8081/prices
-    public String showPrices() {
-        return priceService.getFormattedPrice();
+    @GetMapping("/api/price/{crop}")
+    public MandiPrice getCropPrice(@PathVariable String crop) {
+        // In a real app, this data would come from a Database
+        // For now, we are creating a "dummy" object to see JSON in action
+        return new MandiPrice(crop.toUpperCase(), 2450.0, "Quintal", "2026-01-09");
     }
     
     @GetMapping("/greet")
