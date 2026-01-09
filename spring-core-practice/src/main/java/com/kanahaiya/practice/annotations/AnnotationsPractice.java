@@ -1,6 +1,7 @@
 package com.kanahaiya.practice.annotations;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationsPractice {
@@ -11,7 +12,7 @@ public class AnnotationsPractice {
 	   mandiPriceService.processPrices();
 	   
 	   mandiPriceService.process();
-	   
+	   ((AbstractApplicationContext) context).close();
 	   
 }
 }
