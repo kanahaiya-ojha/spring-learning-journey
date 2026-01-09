@@ -2,6 +2,8 @@ package com.kanahaiya.practice.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
@@ -9,6 +11,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MandiPriceService {
+	@Value("${mandi.name}")
+	private String name;
+	
+	@Value("${mandi.fee}")
+	private double fee;
+	
+	@Value("${mandi.contact}")
+	private String contact;
 	@Autowired
 	private DatabaseConnector dbConnector;
 	@Autowired
@@ -35,7 +45,8 @@ public class MandiPriceService {
 	}
 	
 	public void process() {
-        System.out.println(mandiData.getInfo());
+//        System.out.println(mandiData.getInfo());
+		System.out.println("Mandi:"+ name + " | Commission Fee : " + fee +"%  | contact :"+contact);
     }
 	
 	@PreDestroy
